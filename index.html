@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Logia Masónica Alioth No. 44 — Muy Respetable Gran Logia del Estado de México" />
+  <title>Logia Alioth No. 44 | Gran Logia del Estado de México</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVEGACIÓN PRINCIPAL
+  ====================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo Logia -->
+      <a href="#inicio" class="nav-logo">
+        <div class="logo-placeholder logo-alioth" title="Logo Logia Alioth No. 44">
+          <span class="logo-placeholder-text">Logo<br>Alioth</span>
+        </div>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#historia" class="nav-link">Historia</a>
+        <a href="#cuadro" class="nav-link">Cuadro Logial</a>
+        <a href="#galeria" class="nav-link">Galería</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <!-- Logo Gran Logia -->
+      <div class="logo-placeholder logo-gran-logia" title="Logo Gran Logia del Estado de México">
+        <span class="logo-placeholder-text">Logo Gran<br>Logia E.M.</span>
+      </div>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =====================================================
+       SECCIÓN 1: HERO / PORTADA
+  ====================================================== -->
+  <section class="hero" id="inicio">
+    <!-- Piso ajedrezado decorativo -->
+    <div class="chess-floor hero-chess-floor" aria-hidden="true"></div>
+
+    <!-- Escuadra y Compás SVG central -->
+    <div class="hero-symbol" aria-hidden="true">
+      <!-- Square and Compass SVG -->
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="sq-compass-svg">
+        <!-- Escuadra (Square) -->
+        <g class="square-group">
+          <line x1="40" y1="60" x2="100" y2="160" stroke="#c9a84c" stroke-width="6" stroke-linecap="round"/>
+          <line x1="100" y1="160" x2="160" y2="60" stroke="#c9a84c" stroke-width="6" stroke-linecap="round"/>
+        </g>
+        <!-- Compás (Compass) -->
+        <g class="compass-group">
+          <line x1="100" y1="50" x2="55" y2="140" stroke="#c9a84c" stroke-width="5" stroke-linecap="round"/>
+          <line x1="100" y1="50" x2="145" y2="140" stroke="#c9a84c" stroke-width="5" stroke-linecap="round"/>
+          <!-- Punta del compás -->
+          <circle cx="100" cy="50" r="5" fill="#c9a84c"/>
+          <!-- Barra del compás -->
+          <line x1="68" y1="105" x2="132" y2="105" stroke="#c9a84c" stroke-width="4"/>
+        </g>
+        <!-- Letra G central -->
+        <text x="100" y="115" text-anchor="middle" fill="#c9a84c" font-size="28" font-family="Cinzel, serif" font-weight="700">G</text>
+      </svg>
+    </div>
+
+    <!-- Contenido Hero -->
+    <div class="hero-content animate-fade-in">
+      <p class="hero-super">Muy Respetable Gran Logia del Estado de México</p>
+      <h1 class="hero-title">Logia Alioth</h1>
+      <div class="hero-number">No. 44</div>
+      <p class="hero-subtitle">Fraternidad · Razón · Virtud</p>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <a href="#historia" class="btn btn-gold scroll-link">Conoce más</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Separador ajedrezado -->
+  <div class="chess-separator" aria-hidden="true">
+    <div class="chess-floor chess-separator-floor"></div>
+  </div>
+
+  <!-- =====================================================
+       SECCIÓN 2: HISTORIA / QUIÉNES SOMOS
+  ====================================================== -->
+  <section class="section history" id="historia">
+    <!-- Columnas decorativas -->
+    <div class="column-left decorative-column" aria-hidden="true">
+      <!-- Columna SVG -->
+      <svg viewBox="0 0 80 400" xmlns="http://www.w3.org/2000/svg" class="column-svg">
+        <!-- Capitel jónico -->
+        <rect x="5" y="10" width="70" height="12" rx="4" fill="#c9a84c" opacity="0.3"/>
+        <ellipse cx="40" cy="10" rx="35" ry="8" fill="#c9a84c" opacity="0.4"/>
+        <!-- Volutas jónicas -->
+        <path d="M10,18 Q5,25 12,28 Q18,31 15,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5"/>
+        <path d="M70,18 Q75,25 68,28 Q62,31 65,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5"/>
+        <!-- Fuste -->
+        <rect x="22" y="28" width="36" height="340" fill="#c9a84c" opacity="0.08"/>
+        <line x1="28" y1="28" x2="28" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2"/>
+        <line x1="40" y1="28" x2="40" y2="368" stroke="#c9a84c" stroke-width="1.5" opacity="0.15"/>
+        <line x1="52" y1="28" x2="52" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2"/>
+        <!-- Basa -->
+        <rect x="10" y="368" width="60" height="8" rx="2" fill="#c9a84c" opacity="0.3"/>
+        <rect x="5" y="376" width="70" height="12" rx="3" fill="#c9a84c" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <div class="section-container">
+      <div class="section-header animate-on-scroll">
+        <!-- Separador decorativo con escuadra/compás -->
+        <div class="section-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <svg viewBox="0 0 40 40" class="ornament-icon"><use href="#sq-compass-small"/></svg>
+          <span class="ornament-line"></span>
+        </div>
+        <h2 class="section-title">Historia &amp; Quiénes Somos</h2>
+      </div>
+
+      <div class="history-grid">
+        <!-- Columna de texto 1 -->
+        <div class="history-text animate-on-scroll">
+          <h3 class="history-subtitle">Nuestra Fundación</h3>
+          <p>
+            [Placeholder — Texto sobre la fundación de la Logia Alioth No. 44. Aquí se narrará la historia
+            de cómo fue constituida la logia, el año de su fundación, los fundadores y el contexto
+            histórico en que surgió bajo el amparo de la Muy Respetable Gran Logia del Estado de México.]
+          </p>
+          <p>
+            [Placeholder — Continuación del relato fundacional. Se puede incluir información sobre
+            la primera sede, los trabajos realizados, y los principios que guiaron a los hermanos
+            fundadores en la constitución de este taller masónico.]
+          </p>
+        </div>
+
+        <!-- Columna de texto 2 -->
+        <div class="history-text animate-on-scroll" style="animation-delay: 0.2s;">
+          <h3 class="history-subtitle">Nuestra Misión</h3>
+          <p>
+            [Placeholder — Descripción de la misión y valores de la Logia Alioth No. 44. Se incluirá
+            información sobre los principios masónicos que rigen el taller: la búsqueda de la verdad,
+            el perfeccionamiento moral del ser humano y el servicio a la humanidad.]
+          </p>
+          <p>
+            [Placeholder — Texto sobre las actividades filantrópicas, culturales y educativas que
+            realiza la logia en su comunidad. Descripción de cómo la fraternidad masónica se
+            traduce en acciones concretas de bien hacia la sociedad.]
+          </p>
+        </div>
+      </div>
+
+      <!-- Imagen decorativa / Banner con piso ajedrezado -->
+      <div class="history-image-banner animate-on-scroll">
+        <div class="chess-floor history-chess" aria-hidden="true"></div>
+        <div class="history-banner-content">
+          <blockquote class="history-quote">
+            "La Masonería es una institución esencialmente filosófica, filantrópica y progresista,
+            que tiene por base la fraternidad universal."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="column-right decorative-column" aria-hidden="true">
+      <svg viewBox="0 0 80 400" xmlns="http://www.w3.org/2000/svg" class="column-svg">
+        <rect x="5" y="10" width="70" height="12" rx="4" fill="#c9a84c" opacity="0.3"/>
+        <ellipse cx="40" cy="10" rx="35" ry="8" fill="#c9a84c" opacity="0.4"/>
+        <path d="M10,18 Q5,25 12,28 Q18,31 15,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5"/>
+        <path d="M70,18 Q75,25 68,28 Q62,31 65,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5"/>
+        <rect x="22" y="28" width="36" height="340" fill="#c9a84c" opacity="0.08"/>
+        <line x1="28" y1="28" x2="28" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2"/>
+        <line x1="40" y1="28" x2="40" y2="368" stroke="#c9a84c" stroke-width="1.5" opacity="0.15"/>
+        <line x1="52" y1="28" x2="52" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2"/>
+        <rect x="10" y="368" width="60" height="8" rx="2" fill="#c9a84c" opacity="0.3"/>
+        <rect x="5" y="376" width="70" height="12" rx="3" fill="#c9a84c" opacity="0.4"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Separador ajedrezado -->
+  <div class="chess-separator" aria-hidden="true">
+    <div class="chess-floor chess-separator-floor"></div>
+  </div>
+
+  <!-- =====================================================
+       SECCIÓN 3: CUADRO LOGIAL
+  ====================================================== -->
+  <section class="section officers" id="cuadro">
+    <div class="section-container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <svg viewBox="0 0 40 40" class="ornament-icon"><use href="#sq-compass-small"/></svg>
+          <span class="ornament-line"></span>
+        </div>
+        <h2 class="section-title">Cuadro Logial</h2>
+        <p class="section-subtitle">Oficiales del Taller — Año [AAAA]</p>
+      </div>
+
+      <!-- Tarjetas de oficiales -->
+      <div class="officers-grid">
+
+        <!-- Venerable Maestro (destacado) -->
+        <div class="officer-card officer-card--featured animate-on-scroll">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">VM</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Venerable Maestro</p>
+          </div>
+        </div>
+
+        <!-- Primer Vigilante -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.1s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">1V</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Primer Vigilante</p>
+          </div>
+        </div>
+
+        <!-- Segundo Vigilante -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.15s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">2V</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Segundo Vigilante</p>
+          </div>
+        </div>
+
+        <!-- Secretario -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">Sec</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Secretario</p>
+          </div>
+        </div>
+
+        <!-- Tesorero -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.25s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">Tes</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Tesorero</p>
+          </div>
+        </div>
+
+        <!-- Orador -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.3s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">Or</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Orador</p>
+          </div>
+        </div>
+
+        <!-- Maestro de Ceremonias -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.35s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">MC</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Maestro de Ceremonias</p>
+          </div>
+        </div>
+
+        <!-- Hospitalario -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">Hosp</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Hospitalario</p>
+          </div>
+        </div>
+
+        <!-- Experto -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.45s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">Exp</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Experto</p>
+          </div>
+        </div>
+
+        <!-- Primer Diácono -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.5s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">1D</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Primer Diácono</p>
+          </div>
+        </div>
+
+        <!-- Segundo Diácono -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.55s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">2D</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Segundo Diácono</p>
+          </div>
+        </div>
+
+        <!-- Guarda Templo -->
+        <div class="officer-card animate-on-scroll" style="animation-delay: 0.6s;">
+          <div class="officer-photo-wrapper">
+            <div class="officer-photo-placeholder">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="20" fill="#333"/>
+                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333"/>
+              </svg>
+            </div>
+            <div class="officer-badge">GT</div>
+          </div>
+          <div class="officer-info">
+            <h3 class="officer-name">[Nombre del Hermano]</h3>
+            <p class="officer-title">Guarda Templo</p>
+          </div>
+        </div>
+
+      </div><!-- /officers-grid -->
+    </div>
+  </section>
+
+  <!-- Separador ajedrezado -->
+  <div class="chess-separator" aria-hidden="true">
+    <div class="chess-floor chess-separator-floor"></div>
+  </div>
+
+  <!-- =====================================================
+       SECCIÓN 4: GALERÍA DE FOTOS
+  ====================================================== -->
+  <section class="section gallery" id="galeria">
+    <div class="section-container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <svg viewBox="0 0 40 40" class="ornament-icon"><use href="#sq-compass-small"/></svg>
+          <span class="ornament-line"></span>
+        </div>
+        <h2 class="section-title">Galería</h2>
+        <p class="section-subtitle">Momentos de fraternidad y trabajo</p>
+      </div>
+
+      <!-- Grid de galería -->
+      <div class="gallery-grid animate-on-scroll">
+
+        <!-- Foto 1 -->
+        <a href="#lightbox-1" class="gallery-item lightbox-trigger" data-index="0" aria-label="Ver foto 1">
+          <div class="gallery-placeholder">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 1</span>
+          </div>
+        </a>
+
+        <!-- Foto 2 -->
+        <a href="#lightbox-2" class="gallery-item lightbox-trigger" data-index="1" aria-label="Ver foto 2">
+          <div class="gallery-placeholder gallery-placeholder--tall">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 2</span>
+          </div>
+        </a>
+
+        <!-- Foto 3 -->
+        <a href="#lightbox-3" class="gallery-item lightbox-trigger" data-index="2" aria-label="Ver foto 3">
+          <div class="gallery-placeholder">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 3</span>
+          </div>
+        </a>
+
+        <!-- Foto 4 -->
+        <a href="#lightbox-4" class="gallery-item gallery-item--wide lightbox-trigger" data-index="3" aria-label="Ver foto 4">
+          <div class="gallery-placeholder">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 4</span>
+          </div>
+        </a>
+
+        <!-- Foto 5 -->
+        <a href="#lightbox-5" class="gallery-item lightbox-trigger" data-index="4" aria-label="Ver foto 5">
+          <div class="gallery-placeholder">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 5</span>
+          </div>
+        </a>
+
+        <!-- Foto 6 -->
+        <a href="#lightbox-6" class="gallery-item lightbox-trigger" data-index="5" aria-label="Ver foto 6">
+          <div class="gallery-placeholder gallery-placeholder--tall">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 6</span>
+          </div>
+        </a>
+
+        <!-- Foto 7 -->
+        <a href="#lightbox-7" class="gallery-item lightbox-trigger" data-index="6" aria-label="Ver foto 7">
+          <div class="gallery-placeholder">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 7</span>
+          </div>
+        </a>
+
+        <!-- Foto 8 -->
+        <a href="#lightbox-8" class="gallery-item lightbox-trigger" data-index="7" aria-label="Ver foto 8">
+          <div class="gallery-placeholder">
+            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
+            <span class="gallery-icon">&#128247;</span>
+            <span class="gallery-label">Foto 8</span>
+          </div>
+        </a>
+
+      </div><!-- /gallery-grid -->
+    </div>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+      <div class="lightbox-overlay" id="lightbox-overlay"></div>
+      <div class="lightbox-container">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Imagen anterior">&#8249;</button>
+        <div class="lightbox-content">
+          <!-- Placeholder para imagen ampliada -->
+          <div class="lightbox-placeholder" id="lightbox-placeholder">
+            <div class="chess-floor" style="position:absolute;inset:0;opacity:0.3;"></div>
+            <span class="gallery-icon" style="font-size:4rem;">&#128247;</span>
+            <span class="gallery-label" id="lightbox-label" style="font-size:1.2rem;margin-top:1rem;">Foto</span>
+          </div>
+        </div>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Imagen siguiente">&#8250;</button>
+        <p class="lightbox-counter" id="lightbox-counter">1 / 8</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Separador ajedrezado -->
+  <div class="chess-separator" aria-hidden="true">
+    <div class="chess-floor chess-separator-floor"></div>
+  </div>
+
+  <!-- =====================================================
+       SECCIÓN 5: CONTACTO
+  ====================================================== -->
+  <section class="section contact" id="contacto">
+    <div class="section-container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <svg viewBox="0 0 40 40" class="ornament-icon"><use href="#sq-compass-small"/></svg>
+          <span class="ornament-line"></span>
+        </div>
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">Estamos a tus órdenes, Hermano</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Información de contacto -->
+        <div class="contact-info animate-on-scroll">
+          <h3 class="contact-info-title">Encuéntranos</h3>
+
+          <div class="contact-detail">
+            <div class="contact-icon">&#127970;</div>
+            <div>
+              <strong>Dirección</strong>
+              <p>[Dirección del Templo, Ciudad, Estado de México]</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">&#128337;</div>
+            <div>
+              <strong>Tenidas</strong>
+              <p>[Día y hora de las tenidas regulares]</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-icon">&#9993;</div>
+            <div>
+              <strong>Correo</strong>
+              <p>[correo@logialioth44.org]</p>
+            </div>
+          </div>
+
+          <!-- Mini mapa placeholder -->
+          <div class="map-placeholder animate-on-scroll">
+            <div class="chess-floor" style="position:absolute;inset:0;opacity:0.2;"></div>
+            <span style="position:relative;z-index:1;color:var(--gold);font-size:2rem;">&#128205;</span>
+            <span style="position:relative;z-index:1;color:var(--text-muted);margin-top:0.5rem;">Mapa — [Ciudad, Estado de México]</span>
+          </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <div class="contact-form-wrapper animate-on-scroll" style="animation-delay:0.2s;">
+          <!--
+            Para activar el envío, reemplaza "YOUR_FORM_ID" con tu ID de Formspree:
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            O configura tu propio backend.
+          -->
+          <form class="contact-form" id="contact-form" action="#" method="POST" novalidate>
+            <div class="form-group">
+              <label for="nombre" class="form-label">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" class="form-input"
+                     placeholder="Tu nombre" required autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="correo" class="form-label">Correo electrónico *</label>
+              <input type="email" id="correo" name="correo" class="form-input"
+                     placeholder="tucorreo@ejemplo.com" required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="asunto" class="form-label">Asunto</label>
+              <input type="text" id="asunto" name="asunto" class="form-input"
+                     placeholder="¿En qué podemos ayudarte?" />
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje" class="form-label">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" class="form-input form-textarea"
+                        placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-full">
+              Enviar Mensaje
+            </button>
+            <p class="form-notice">* Campos requeridos. Tu información es confidencial.</p>
+            <div class="form-success" id="form-success" aria-live="polite">
+              ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.
+            </div>
+          </form>
+        </div>
+
+      </div><!-- /contact-grid -->
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer">
+    <!-- Piso ajedrezado de fondo -->
+    <div class="chess-floor footer-chess" aria-hidden="true"></div>
+
+    <div class="footer-container">
+
+      <!-- Logos -->
+      <div class="footer-logos">
+        <div class="logo-placeholder logo-alioth logo-footer" title="Logo Logia Alioth No. 44">
+          <span class="logo-placeholder-text">Logo<br>Alioth 44</span>
+        </div>
+        <div class="footer-logos-divider" aria-hidden="true">
+          <!-- Escuadra y compás pequeño -->
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+            <line x1="15" y1="20" x2="30" y2="48" stroke="#c9a84c" stroke-width="4" stroke-linecap="round"/>
+            <line x1="30" y1="48" x2="45" y2="20" stroke="#c9a84c" stroke-width="4" stroke-linecap="round"/>
+            <line x1="30" y1="15" x2="18" y2="42" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
+            <line x1="30" y1="15" x2="42" y2="42" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="30" cy="15" r="3" fill="#c9a84c"/>
+            <line x1="22" y1="32" x2="38" y2="32" stroke="#c9a84c" stroke-width="2.5"/>
+            <text x="30" y="37" text-anchor="middle" fill="#c9a84c" font-size="9" font-family="Cinzel, serif" font-weight="700">G</text>
+          </svg>
+        </div>
+        <div class="logo-placeholder logo-gran-logia logo-footer" title="Logo Gran Logia del Estado de México">
+          <span class="logo-placeholder-text">Logo Gran<br>Logia E.M.</span>
+        </div>
+      </div>
+
+      <!-- Frase masónica -->
+      <p class="footer-motto">"Libertad, Igualdad, Fraternidad"</p>
+
+      <!-- Información -->
+      <div class="footer-info">
+        <p class="footer-name">Logia Alioth No. 44</p>
+        <p class="footer-org">Muy Respetable Gran Logia del Estado de México</p>
+        <p class="footer-year">Fundada en [Año de Fundación]</p>
+      </div>
+
+      <!-- Derechos reservados -->
+      <p class="footer-rights">
+        &copy; <span id="current-year"></span> Logia Alioth No. 44. Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       SVG DEFS (reutilizables)
+  ====================================================== -->
+  <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Escuadra y Compás pequeño para ornamentos -->
+      <symbol id="sq-compass-small" viewBox="0 0 40 40">
+        <!-- Escuadra -->
+        <line x1="8" y1="12" x2="20" y2="32" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="20" y1="32" x2="32" y2="12" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Compás -->
+        <line x1="20" y1="8" x2="11" y2="28" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+        <line x1="20" y1="8" x2="29" y2="28" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="20" cy="8" r="2" fill="#c9a84c"/>
+        <line x1="14" y1="20" x2="26" y2="20" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="20" y="24" text-anchor="middle" fill="#c9a84c" font-size="7" font-family="Cinzel,serif" font-weight="700">G</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
