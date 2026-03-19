@@ -1,15 +1,95 @@
 /* =====================================================
    LOGIA ALIOTH NO. 44 — JavaScript Principal
-   - Navbar scroll
-   - Menú hamburguesa
-   - Scroll suave
-   - Animaciones al scroll (IntersectionObserver)
-   - Lightbox de galería
+   - Animacion de titulo letra por letra
+   - Parallax de 3 capas en hero (desactivado en movil)
+   - Navbar scroll + enlace activo
+   - Menu hamburguesa
+   - Intersection Observer para animaciones de entrada
+   - Parallax sutil en elementos decorativos
+   - Lightbox de galeria (JS puro)
    - Formulario de contacto
    ===================================================== */
 
 (function () {
   'use strict';
+
+  /* ──────────────────────────────────────────────────
+     DETECCION DE MOVIL — para desactivar parallax
+  ─────────────────────────────────────────────────── */
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ──────────────────────────────────────────────────
+     ANIMACION DEL TITULO — Fade-in letra por letra
+     con retraso escalonado
+  ─────────────────────────────────────────────────── */
+  const heroTitleLine1 = document.getElementById('hero-title-line1');
+  const heroTitleLine2 = document.getElementById('hero-title-line2');
+  const titleLine1Text = 'R\u2234 L\u2234 S\u2234';
+  const titleLine2Text = 'Alioth';
+
+  function animateLetters(container, text, baseDelay) {
+    if (!container) return;
+    const letterDelay = 0.08;
+    text.split('').forEach((char, i) => {
+      const span = document.createElement('span');
+      span.className = 'letter';
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      span.style.animationDelay = `${baseDelay + (i * letterDelay)}s`;
+      container.appendChild(span);
+    });
+  }
+
+  animateLetters(heroTitleLine1, titleLine1Text, 0.8);
+  animateLetters(heroTitleLine2, titleLine2Text, 0.8 + titleLine1Text.length * 0.08);
+
+  /* ──────────────────────────────────────────────────
+     PARALLAX — 3 capas en el hero a velocidades distintas
+     Desactivado en movil para rendimiento
+  ─────────────────────────────────────────────────── */
+  if (!isMobile && !prefersReducedMotion) {
+    const parallaxLayers = document.querySelectorAll('[data-parallax-speed]');
+
+    function handleParallax() {
+      const scrollY = window.scrollY;
+      const heroHeight = document.querySelector('.hero').offsetHeight;
+
+      // Solo aplicar parallax cuando el hero es visible
+      if (scrollY > heroHeight) return;
+
+      parallaxLayers.forEach(layer => {
+        const speed = parseFloat(layer.dataset.parallaxSpeed);
+        const yOffset = scrollY * speed;
+        layer.style.transform = `translateY(${yOffset}px)`;
+      });
+    }
+
+    window.addEventListener('scroll', handleParallax, { passive: true });
+  }
+
+  /* ──────────────────────────────────────────────────
+     PARALLAX SUTIL en elementos decorativos (±20px)
+     Columnas y lineas doradas
+  ─────────────────────────────────────────────────── */
+  if (!isMobile && !prefersReducedMotion) {
+    const decorElements = document.querySelectorAll('.separator-triangle, .hero-column');
+
+    function handleDecorParallax() {
+      const scrollY = window.scrollY;
+
+      decorElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const viewCenter = window.innerHeight / 2;
+        const distance = (center - viewCenter) / viewCenter;
+        // Limitar a ±20px
+        const offset = Math.max(-20, Math.min(20, distance * 20));
+        el.style.transform = `translateY(${offset}px)`;
+      });
+    }
+
+    window.addEventListener('scroll', handleDecorParallax, { passive: true });
+  }
 
   /* ──────────────────────────────────────────────────
      NAVBAR — Efecto al hacer scroll
@@ -25,7 +105,7 @@
   }
 
   window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-  handleNavbarScroll(); // Ejecutar al cargar
+  handleNavbarScroll();
 
   /* ──────────────────────────────────────────────────
      NAVBAR — Enlace activo al hacer scroll
@@ -34,7 +114,7 @@
   const navLinks = document.querySelectorAll('.nav-link');
 
   function updateActiveLink() {
-    const scrollY = window.scrollY + 120; // Offset para el navbar fijo
+    const scrollY = window.scrollY + 120;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -56,12 +136,13 @@
   updateActiveLink();
 
   /* ──────────────────────────────────────────────────
-     MENÚ HAMBURGUESA
+     MENU HAMBURGUESA
   ─────────────────────────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
   const navLinksMenu = document.getElementById('nav-links');
 
-  function toggleMenu(forceClose = false) {
+  function toggleMenu(forceClose) {
+    if (forceClose === undefined) forceClose = false;
     const isOpen = navLinksMenu.classList.contains('open');
 
     if (forceClose || isOpen) {
@@ -73,21 +154,21 @@
       navLinksMenu.classList.add('open');
       hamburger.classList.add('active');
       hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden'; // Previene scroll del body cuando el menú está abierto
+      document.body.style.overflow = 'hidden';
     }
   }
 
   if (hamburger) {
-    hamburger.addEventListener('click', () => toggleMenu());
+    hamburger.addEventListener('click', function () { toggleMenu(); });
   }
 
-  // Cerrar menú al hacer clic en un enlace
-  navLinksMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => toggleMenu(true));
+  // Cerrar menu al hacer clic en un enlace
+  navLinksMenu.querySelectorAll('.nav-link').forEach(function (link) {
+    link.addEventListener('click', function () { toggleMenu(true); });
   });
 
-  // Cerrar menú al hacer clic fuera (en overlay)
-  document.addEventListener('click', (e) => {
+  // Cerrar menu al clic fuera
+  document.addEventListener('click', function (e) {
     if (
       navLinksMenu.classList.contains('open') &&
       !navLinksMenu.contains(e.target) &&
@@ -97,8 +178,8 @@
     }
   });
 
-  // Cerrar menú con tecla Escape
-  document.addEventListener('keydown', (e) => {
+  // Cerrar menu con Escape
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && navLinksMenu.classList.contains('open')) {
       toggleMenu(true);
     }
@@ -107,17 +188,17 @@
   /* ──────────────────────────────────────────────────
      SCROLL SUAVE para enlaces de ancla
   ─────────────────────────────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
+      var targetId = this.getAttribute('href');
       if (targetId === '#') return;
 
-      const target = document.querySelector(targetId);
+      var target = document.querySelector(targetId);
       if (!target) return;
 
       e.preventDefault();
-      const navbarHeight = navbar ? navbar.offsetHeight : 0;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+      var navbarHeight = navbar ? navbar.offsetHeight : 0;
+      var targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
 
       window.scrollTo({
         top: targetPosition,
@@ -127,57 +208,77 @@
   });
 
   /* ──────────────────────────────────────────────────
-     ANIMACIONES AL SCROLL — IntersectionObserver
+     INTERSECTION OBSERVER — Animaciones de entrada
+     Cada seccion al entrar en viewport:
+     fade-in + translateY hacia arriba
   ─────────────────────────────────────────────────── */
-  const animateElements = document.querySelectorAll('.animate-on-scroll');
+  var animateElements = document.querySelectorAll('.animate-on-scroll');
 
-  const observerOptions = {
+  var observerOptions = {
     root: null,
-    rootMargin: '0px 0px -60px 0px', // Activa un poco antes de que salga del viewport
-    threshold: 0.12
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.1
   };
 
-  const intersectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+  var intersectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        intersectionObserver.unobserve(entry.target); // Solo animar una vez
+        intersectionObserver.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  animateElements.forEach(el => {
-    // Respetar preferencias de movimiento reducido
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      el.classList.add('visible'); // Mostrar directamente sin animación
+  animateElements.forEach(function (el) {
+    if (prefersReducedMotion) {
+      el.classList.add('visible');
     } else {
       intersectionObserver.observe(el);
     }
   });
 
+  /* Animacion escalonada para items de galeria en movil */
+  if (isMobile && !prefersReducedMotion) {
+    var galleryItems = document.querySelectorAll('.gallery-item');
+    var galleryObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('gallery-visible');
+          galleryObserver.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px', threshold: 0.15 });
+
+    galleryItems.forEach(function (item) {
+      item.classList.add('gallery-animate');
+      galleryObserver.observe(item);
+    });
+  }
+
   /* ──────────────────────────────────────────────────
-     LIGHTBOX DE GALERÍA
+     LIGHTBOX DE GALERIA (JS puro)
   ─────────────────────────────────────────────────── */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxOverlay = document.getElementById('lightbox-overlay');
-  const lightboxClose = document.getElementById('lightbox-close');
-  const lightboxPrev = document.getElementById('lightbox-prev');
-  const lightboxNext = document.getElementById('lightbox-next');
-  const lightboxLabel = document.getElementById('lightbox-label');
-  const lightboxCounter = document.getElementById('lightbox-counter');
-  const galleryTriggers = document.querySelectorAll('.lightbox-trigger');
+  var lightbox = document.getElementById('lightbox');
+  var lightboxOverlay = document.getElementById('lightbox-overlay');
+  var lightboxClose = document.getElementById('lightbox-close');
+  var lightboxPrev = document.getElementById('lightbox-prev');
+  var lightboxNext = document.getElementById('lightbox-next');
+  var lightboxImage = document.getElementById('lightbox-image');
+  var lightboxCounter = document.getElementById('lightbox-counter');
+  var galleryTriggers = document.querySelectorAll('.lightbox-trigger');
 
-  let currentIndex = 0;
-  const totalImages = galleryTriggers.length;
+  var currentIndex = 0;
+  var totalImages = galleryTriggers.length;
 
-  // Datos de las fotos (placeholder — reemplazar con URLs reales)
-  const galleryData = Array.from(galleryTriggers).map((trigger, idx) => ({
-    index: idx,
-    label: trigger.querySelector('.gallery-label')
-      ? trigger.querySelector('.gallery-label').textContent
-      : `Foto ${idx + 1}`,
-    // src: 'img/foto-' + (idx + 1) + '.jpg' // URL real cuando estén las imágenes
-  }));
+  // Obtener las URLs de las imagenes de la galeria
+  var galleryData = Array.from(galleryTriggers).map(function (trigger, idx) {
+    var img = trigger.querySelector('.gallery-img');
+    return {
+      index: idx,
+      src: img ? img.src : '',
+      alt: img ? img.alt : 'Foto ' + (idx + 1)
+    };
+  });
 
   function openLightbox(index) {
     currentIndex = index;
@@ -190,23 +291,18 @@
   function closeLightbox() {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
-    // Devolver foco al elemento que abrió el lightbox
     if (galleryTriggers[currentIndex]) {
       galleryTriggers[currentIndex].focus();
     }
   }
 
   function updateLightboxContent(index) {
-    const data = galleryData[index];
-    if (lightboxLabel) lightboxLabel.textContent = data.label;
-    if (lightboxCounter) lightboxCounter.textContent = `${index + 1} / ${totalImages}`;
-
-    // Cuando se agreguen imágenes reales, descomentar esto:
-    // const img = lightboxContent.querySelector('img') || document.createElement('img');
-    // img.src = data.src;
-    // img.alt = data.label;
-    // lightboxContent.innerHTML = '';
-    // lightboxContent.appendChild(img);
+    var data = galleryData[index];
+    if (lightboxImage) {
+      lightboxImage.src = data.src;
+      lightboxImage.alt = data.alt;
+    }
+    if (lightboxCounter) lightboxCounter.textContent = (index + 1) + ' / ' + totalImages;
   }
 
   function showPrev() {
@@ -219,9 +315,9 @@
     updateLightboxContent(currentIndex);
   }
 
-  // Abrir lightbox al hacer clic en una imagen
-  galleryTriggers.forEach((trigger, index) => {
-    trigger.addEventListener('click', (e) => {
+  // Abrir lightbox al clic
+  galleryTriggers.forEach(function (trigger, index) {
+    trigger.addEventListener('click', function (e) {
       e.preventDefault();
       openLightbox(index);
     });
@@ -233,110 +329,192 @@
   if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
   if (lightboxNext) lightboxNext.addEventListener('click', showNext);
 
-  // Navegación por teclado en lightbox
-  document.addEventListener('keydown', (e) => {
+  // Navegacion por teclado
+  document.addEventListener('keydown', function (e) {
     if (!lightbox.classList.contains('active')) return;
-
-    switch (e.key) {
-      case 'Escape':    closeLightbox(); break;
-      case 'ArrowLeft': showPrev(); break;
-      case 'ArrowRight':showNext(); break;
-    }
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
   });
 
-  // Navegación táctil en lightbox (swipe)
-  let touchStartX = 0;
-  let touchEndX = 0;
+  // Navegacion tactil (swipe)
+  var touchStartX = 0;
+  var touchEndX = 0;
 
-  lightbox.addEventListener('touchstart', (e) => {
+  lightbox.addEventListener('touchstart', function (e) {
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
 
-  lightbox.addEventListener('touchend', (e) => {
+  lightbox.addEventListener('touchend', function (e) {
     touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 50) { // Umbral de 50px
+    var diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
       if (diff > 0) showNext();
       else showPrev();
     }
   }, { passive: true });
 
   /* ──────────────────────────────────────────────────
-     FORMULARIO DE CONTACTO
+     FORMULARIO DE CONTACTO — Envia a Google Form
+     IDs internos extraidos del FB_PUBLIC_LOAD_DATA_
   ─────────────────────────────────────────────────── */
-  const contactForm = document.getElementById('contact-form');
-  const formSuccess = document.getElementById('form-success');
+  var contactForm = document.getElementById('contact-form');
+  var formSuccess = document.getElementById('form-success');
+  var GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSebZPWttJSSPAKBUe0xAfXqx8PZrOtUAVuYOLj-yoT46ItdeQ/formResponse';
 
+  // IDs internos (inner response IDs) del Google Form
+  var FIELD_MAP = {
+    nombre:   'entry.1838050102',
+    correo:   'entry.755104155',
+    telefono: 'entry.1264020608',
+    mensaje:  'entry.1811652472'
+  };
+
+  /* -- Validacion inline por campo -- */
+  function showError(input, msg) {
+    clearError(input);
+    input.classList.add('form-input--error');
+    var el = document.createElement('span');
+    el.className = 'form-error';
+    el.textContent = msg;
+    input.parentNode.appendChild(el);
+  }
+
+  function clearError(input) {
+    input.classList.remove('form-input--error');
+    var prev = input.parentNode.querySelector('.form-error');
+    if (prev) prev.remove();
+  }
+
+  function validateField(input) {
+    var val = input.value.trim();
+    var name = input.name;
+
+    if ((name === 'nombre' || name === 'correo' || name === 'mensaje') && !val) {
+      showError(input, 'Este campo es requerido.');
+      return false;
+    }
+
+    if (name === 'nombre' && val.length < 3) {
+      showError(input, 'Ingresa al menos 3 caracteres.');
+      return false;
+    }
+
+    if (name === 'correo' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      showError(input, 'Ingresa un correo valido.');
+      return false;
+    }
+
+    if (name === 'telefono' && val && !/^[\d\s\-+()]{7,15}$/.test(val)) {
+      showError(input, 'Ingresa un telefono valido.');
+      return false;
+    }
+
+    if (name === 'mensaje' && val.length < 10) {
+      showError(input, 'El mensaje debe tener al menos 10 caracteres.');
+      return false;
+    }
+
+    clearError(input);
+    input.classList.add('form-input--valid');
+    return true;
+  }
+
+  // Validacion en tiempo real al salir de cada campo
   if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    var inputs = contactForm.querySelectorAll('.form-input');
+    inputs.forEach(function (input) {
+      input.addEventListener('blur', function () {
+        if (input.value.trim()) validateField(input);
+      });
+      input.addEventListener('input', function () {
+        if (input.classList.contains('form-input--error')) {
+          validateField(input);
+        }
+      });
+    });
+
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
+      // Validar todos los campos
+      var allValid = true;
+      inputs.forEach(function (input) {
+        var valid = validateField(input);
+        if (!valid) allValid = false;
+      });
 
-      // Validación básica
-      const nombre = contactForm.nombre.value.trim();
-      const correo = contactForm.correo.value.trim();
-      const mensaje = contactForm.mensaje.value.trim();
+      if (!allValid) return;
 
-      if (!nombre || !correo || !mensaje) {
-        alert('Por favor completa los campos requeridos (Nombre, Correo y Mensaje).');
-        return;
-      }
+      var submitBtn = document.getElementById('btn-submit');
+      var submitText = submitBtn.querySelector('.btn-submit-text');
+      var originalText = submitText.textContent;
 
-      if (!isValidEmail(correo)) {
-        alert('Por favor ingresa un correo electrónico válido.');
-        return;
-      }
+      var nombre = contactForm.nombre.value.trim();
+      var correo = contactForm.correo.value.trim();
+      var telefono = contactForm.telefono.value.trim();
+      var mensaje = contactForm.mensaje.value.trim();
 
       // Estado de carga
-      submitBtn.textContent = 'Enviando...';
+      submitText.textContent = 'Enviando...';
       submitBtn.disabled = true;
 
-      try {
-        /*
-          Para activar el envío real con Formspree:
-          1. Crea una cuenta en formspree.io
-          2. Crea un nuevo formulario y copia tu ID
-          3. Cambia el action del form: action="https://formspree.io/f/TU_ID"
-          4. Reemplaza el bloque fetch de abajo con el envío nativo del form
-             o mantén el fetch si quieres manejo AJAX
+      // Enviar via iframe oculto (metodo mas confiable para Google Forms)
+      var iframeName = 'gform_iframe_' + Date.now();
+      var iframe = document.createElement('iframe');
+      iframe.name = iframeName;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
 
-          Implementación AJAX con Formspree:
-          const response = await fetch('https://formspree.io/f/TU_ID', {
-            method: 'POST',
-            body: new FormData(contactForm),
-            headers: { 'Accept': 'application/json' }
-          });
-          if (!response.ok) throw new Error('Error al enviar');
-        */
+      var hiddenForm = document.createElement('form');
+      hiddenForm.method = 'POST';
+      hiddenForm.action = GOOGLE_FORM_URL;
+      hiddenForm.target = iframeName;
+      hiddenForm.style.display = 'none';
 
-        // Simulación de envío (reemplazar con fetch real)
-        await new Promise(resolve => setTimeout(resolve, 1200));
+      var fields = [
+        { name: FIELD_MAP.nombre,   value: nombre },
+        { name: FIELD_MAP.correo,   value: correo },
+        { name: FIELD_MAP.telefono, value: telefono },
+        { name: FIELD_MAP.mensaje,  value: mensaje }
+      ];
 
-        // Éxito
+      fields.forEach(function (f) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = f.name;
+        input.value = f.value;
+        hiddenForm.appendChild(input);
+      });
+
+      document.body.appendChild(hiddenForm);
+      hiddenForm.submit();
+
+      // Mostrar exito despues de un breve momento
+      setTimeout(function () {
+        document.body.removeChild(hiddenForm);
+        document.body.removeChild(iframe);
+
         contactForm.reset();
+        inputs.forEach(function (input) {
+          input.classList.remove('form-input--valid');
+          clearError(input);
+        });
+
         if (formSuccess) {
           formSuccess.classList.add('visible');
-          setTimeout(() => formSuccess.classList.remove('visible'), 6000);
+          setTimeout(function () { formSuccess.classList.remove('visible'); }, 6000);
         }
-      } catch (error) {
-        alert('Hubo un error al enviar el mensaje. Por favor intenta nuevamente o contáctanos directamente.');
-      } finally {
-        submitBtn.textContent = originalText;
+        submitText.textContent = originalText;
         submitBtn.disabled = false;
-      }
+      }, 2000);
     });
   }
 
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
   /* ──────────────────────────────────────────────────
-     AÑO ACTUAL EN FOOTER
+     ANO ACTUAL EN FOOTER
   ─────────────────────────────────────────────────── */
-  const yearEl = document.getElementById('current-year');
+  var yearEl = document.getElementById('current-year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }

@@ -6,49 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Respetable Logia Simbólica Alioth No. 44 — Muy Respetable Gran Logia del Estado de México" />
-  <title>Respetable Logia Simbólica Alioth No. 44 | Muy Respetable Gran Logia del Estado de México</title>
-  <meta name="description" content="">
+  <title>R∴L∴S∴ Alioth No. 44 | Muy Respetable Gran Logia del Estado de México</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
   <!-- =====================================================
-       NAVEGACIÓN PRINCIPAL
+       NAVEGACION PRINCIPAL
   ====================================================== -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <!-- Logo Logia -->
       <a href="#inicio" class="nav-logo">
-        <div class="logo-placeholder logo-alioth" title="Logo Logia Alioth No. 44">
-          <img src="img/logo_alioth.png" alt="Logo Logia Alioth No. 44">
-        </div>
+        <img src="img/logo_alioth.png" alt="Logo Logia Alioth No. 44" class="nav-logo-img" width="60" height="60">
       </a>
 
-      <!-- Menú Desktop -->
-      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+      <!-- Menu Desktop -->
+      <nav class="nav-links" id="nav-links" aria-label="Navegacion principal">
         <a href="#inicio" class="nav-link">Inicio</a>
         <a href="#historia" class="nav-link">Historia</a>
-        <a href="#cuadro" class="nav-link">Cuadro Logial</a>
-        <a href="#galeria" class="nav-link">Galería</a>
+        <a href="#alioth" class="nav-link">Alioth</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
         <a href="#contacto" class="nav-link">Contacto</a>
       </nav>
 
       <!-- Logo Gran Logia -->
-      <div class="logo-placeholder logo-gran-logia" title="Logo Muy Respetable Gran Logia del Estado de México">
-        <img src="img/mrgledm.avif" alt="Muy Respetable Gran Logia del Estado de México">
+      <div class="nav-logo-right">
+        <img src="img/mrgledm.avif" alt="Muy Respetable Gran Logia del Estado de Mexico" class="nav-logo-img" width="60"
+          height="60">
       </div>
 
-      <!-- Botón hamburguesa (móvil) -->
-      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <!-- Boton hamburguesa (movil) -->
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -57,516 +55,397 @@
   </header>
 
   <!-- =====================================================
-       SECCIÓN 1: HERO / PORTADA
+       SECCION 1: HERO / PORTADA — Parallax de 3 capas
   ====================================================== -->
   <section class="hero" id="inicio">
-    <!-- Piso ajedrezado decorativo -->
-    <div class="chess-floor hero-chess-floor" aria-hidden="true"></div>
 
-    <!-- Escuadra y Compás SVG central -->
-    <div class="hero-symbol" aria-hidden="true">
-      <!-- Square and Compass SVG -->
-      <img src="img/mason.png" alt="Logo Logia Alioth No. 44" width="400" height="400">
+    <!-- Capa 1: Fondo de textura (piedra/marmol CSS) -->
+    <div class="hero-layer hero-layer--bg" data-parallax-speed="0.15" aria-hidden="true"></div>
+
+    <!-- Capa 2: Icono masonico PNG -->
+    <div class="hero-layer hero-layer--symbol" data-parallax-speed="0.35" aria-hidden="true">
+      <img src="img/mason.png" alt="" class="hero-mason-icon">
     </div>
 
-    <!-- Contenido Hero -->
-    <div class="hero-content animate-fade-in">
-      <h1 class="hero-title">R&there4; L&there4; S&there4; Alioth</h1>
-      <div class="hero-number">No. 44</div>
-      <p class="hero-super">Jurisdiccionada a la Muy Respetable Gran Logia del Estado de México</p>
-      <p class="hero-subtitle">Libertad · Igualdad · Fraternidad</p>
-      <div class="hero-divider" aria-hidden="true"></div>
-      <a href="#historia" class="btn btn-gold scroll-link">Conoce más</a>
+    <!-- Columna izquierda SVG jonica -->
+    <div class="hero-column hero-column--left" aria-hidden="true">
+      <svg viewBox="0 0 60 500" xmlns="http://www.w3.org/2000/svg" class="column-ionic-svg">
+        <!-- Capitel jonico -->
+        <rect x="2" y="8" width="56" height="8" rx="3" fill="#b8962e" opacity="0.25" />
+        <ellipse cx="30" cy="8" rx="28" ry="6" fill="#b8962e" opacity="0.3" />
+        <!-- Volutas -->
+        <path d="M5,14 Q0,22 8,25 Q14,28 11,19" stroke="#b8962e" stroke-width="1.5" fill="none" opacity="0.4" />
+        <path d="M55,14 Q60,22 52,25 Q46,28 49,19" stroke="#b8962e" stroke-width="1.5" fill="none" opacity="0.4" />
+        <!-- Linea dorada del capitel -->
+        <line x1="2" y1="16" x2="58" y2="16" stroke="#b8962e" stroke-width="1" opacity="0.6" />
+        <!-- Fuste con acanaladuras -->
+        <rect x="14" y="22" width="32" height="450" fill="#b8962e" opacity="0.04" />
+        <line x1="18" y1="22" x2="18" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.12" />
+        <line x1="24" y1="22" x2="24" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.08" />
+        <line x1="30" y1="22" x2="30" y2="472" stroke="#b8962e" stroke-width="1" opacity="0.1" />
+        <line x1="36" y1="22" x2="36" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.08" />
+        <line x1="42" y1="22" x2="42" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.12" />
+        <!-- Basa -->
+        <rect x="8" y="472" width="44" height="6" rx="2" fill="#b8962e" opacity="0.2" />
+        <rect x="2" y="478" width="56" height="10" rx="3" fill="#b8962e" opacity="0.25" />
+      </svg>
     </div>
 
-    <!-- Scroll indicator -->
+    <!-- Columna derecha SVG jonica -->
+    <div class="hero-column hero-column--right" aria-hidden="true">
+      <svg viewBox="0 0 60 500" xmlns="http://www.w3.org/2000/svg" class="column-ionic-svg">
+        <rect x="2" y="8" width="56" height="8" rx="3" fill="#b8962e" opacity="0.25" />
+        <ellipse cx="30" cy="8" rx="28" ry="6" fill="#b8962e" opacity="0.3" />
+        <path d="M5,14 Q0,22 8,25 Q14,28 11,19" stroke="#b8962e" stroke-width="1.5" fill="none" opacity="0.4" />
+        <path d="M55,14 Q60,22 52,25 Q46,28 49,19" stroke="#b8962e" stroke-width="1.5" fill="none" opacity="0.4" />
+        <line x1="2" y1="16" x2="58" y2="16" stroke="#b8962e" stroke-width="1" opacity="0.6" />
+        <rect x="14" y="22" width="32" height="450" fill="#b8962e" opacity="0.04" />
+        <line x1="18" y1="22" x2="18" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.12" />
+        <line x1="24" y1="22" x2="24" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.08" />
+        <line x1="30" y1="22" x2="30" y2="472" stroke="#b8962e" stroke-width="1" opacity="0.1" />
+        <line x1="36" y1="22" x2="36" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.08" />
+        <line x1="42" y1="22" x2="42" y2="472" stroke="#b8962e" stroke-width="0.8" opacity="0.12" />
+        <rect x="8" y="472" width="44" height="6" rx="2" fill="#b8962e" opacity="0.2" />
+        <rect x="2" y="478" width="56" height="10" rx="3" fill="#b8962e" opacity="0.25" />
+      </svg>
+    </div>
+
+    <!-- Capa 3: Contenido del hero (texto + CTA) -->
+    <div class="hero-layer hero-layer--content" data-parallax-speed="0.5">
+      <div class="hero-content">
+        <p class="hero-super">Muy Respetable Gran Logia del Estado de Mexico</p>
+        <h1 class="hero-title" aria-label="R∴ L∴ S∴ Alioth">
+          <span class="hero-title-line" id="hero-title-line1"></span>
+          <span class="hero-title-line" id="hero-title-line2"></span>
+        </h1>
+        <div class="hero-number">No. 44</div>
+        <p class="hero-subtitle">Libertad &middot; Igualdad &middot; Fraternidad</p>
+        <div class="hero-divider" aria-hidden="true">
+          <span class="hero-divider-line"></span>
+        </div>
+        <a href="#historia" class="btn-cta">
+          <span class="btn-cta-text">Conoce Nuestra Historia</span>
+          <span class="btn-cta-border btn-cta-border--top"></span>
+          <span class="btn-cta-border btn-cta-border--right"></span>
+          <span class="btn-cta-border btn-cta-border--bottom"></span>
+          <span class="btn-cta-border btn-cta-border--left"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
     <div class="scroll-indicator" aria-hidden="true">
       <span></span>
     </div>
   </section>
 
-  <!-- Separador ajedrezado -->
-  <div class="chess-separator" aria-hidden="true">
-    <div class="chess-floor chess-separator-floor"></div>
+  <!-- =====================================================
+       SEPARADOR: Piso Ajedrezado Isometrico + Triangulo
+  ====================================================== -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="chess-isometric"></div>
+    <div class="separator-triangle">
+      <!-- Triangulo equilatero (Ojo de la Providencia simplificado) -->
+      <img src="img/mason_dorado_brillante.svg" alt="" class="separator-icon">
+    </div>
+    <div class="separator-line separator-line--left"></div>
+    <div class="separator-line separator-line--right"></div>
   </div>
 
   <!-- =====================================================
-       SECCIÓN 2: HISTORIA / QUIÉNES SOMOS
+       SECCION 2: HISTORIA / QUIENES SOMOS
   ====================================================== -->
-  <section class="section history" id="historia">
-    <!-- Columnas decorativas -->
-    <div class="column-left decorative-column" aria-hidden="true">
-      <!-- Columna SVG -->
-      <svg viewBox="0 0 80 400" xmlns="http://www.w3.org/2000/svg" class="column-svg">
-        <!-- Capitel jónico -->
-        <rect x="5" y="10" width="70" height="12" rx="4" fill="#c9a84c" opacity="0.3" />
-        <ellipse cx="40" cy="10" rx="35" ry="8" fill="#c9a84c" opacity="0.4" />
-        <!-- Volutas jónicas -->
-        <path d="M10,18 Q5,25 12,28 Q18,31 15,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5" />
-        <path d="M70,18 Q75,25 68,28 Q62,31 65,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5" />
-        <!-- Fuste -->
-        <rect x="22" y="28" width="36" height="340" fill="#c9a84c" opacity="0.08" />
-        <line x1="28" y1="28" x2="28" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2" />
-        <line x1="40" y1="28" x2="40" y2="368" stroke="#c9a84c" stroke-width="1.5" opacity="0.15" />
-        <line x1="52" y1="28" x2="52" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2" />
-        <!-- Basa -->
-        <rect x="10" y="368" width="60" height="8" rx="2" fill="#c9a84c" opacity="0.3" />
-        <rect x="5" y="376" width="70" height="12" rx="3" fill="#c9a84c" opacity="0.4" />
-      </svg>
-    </div>
-
+  <section class="section section--history" id="historia">
     <div class="section-container">
       <div class="section-header animate-on-scroll">
-        <!-- Separador decorativo con escuadra/compás -->
+        <!-- Ornamento con triangulo SVG -->
         <div class="section-ornament" aria-hidden="true">
           <span class="ornament-line"></span>
-          <img src="img/mason.png" alt="mason" class="ornament-icon" width="40" height="40">
+          <img src="img/mason_dorado_brillante.svg" alt="" class="ornament-icon">
           <span class="ornament-line"></span>
         </div>
-        <h2 class="section-title">Historia &amp; Quiénes Somos</h2>
+        <h2 class="section-title">Historia &amp; Quienes Somos</h2>
       </div>
 
       <div class="history-grid">
-        <!-- Columna de texto 1 -->
+        <!-- Columna de texto -->
         <div class="history-text animate-on-scroll">
-          <h3 class="history-subtitle">Nuestra Fundación</h3>
+          <h3 class="history-subtitle">Nuestra Fundacion</h3>
           <p>
             Te damos la bienvenida a la R.·.L.·.S.·. "Alioth" 44, fuimos fundados el 7 de Septiembre del año 2018, tras
             un arduo trabajo de los Hermanos fundadores, estamos jurisdiccionados a la M.·.R.·.G.·.L.·. "Estado de
-            México" del R.·.E.·.A y A.·. de AA.·.LL.·.y AA.·.MM.·. y nuestro templo esta ubicado en el Estado de Mexico.
+            Mexico" del R.·.E.·.A y A.·. de AA.·.LL.·.y AA.·.MM.·. y nuestro templo esta ubicado en el Estado de Mexico.
             Somos una logia muy joven pero con muchas ambiciones y trabajamos arduamente y
-            A.·.L.·.G.·.D.·.G.·.A.·.D.·.U.·. para poder ser en el Estado de México y en la jurisdiccion una logia que
-            trabaje con mucha fuerza y vigor
+            A.·.L.·.G.·.D.·.G.·.A.·.D.·.U.·. para poder ser en el Estado de Mexico y en la jurisdiccion una logia que
+            trabaje con mucha fuerza y vigor.
           </p>
         </div>
 
-        <!-- Columna de texto 2 -->
-        <div class="history-text animate-on-scroll" style="animation-delay: 0.2s;">
-          <h3 class="history-subtitle">Nuestra Misión</h3>
+        <!-- Columna decorativa con columnas SVG -->
+        <div class="history-decoration animate-on-scroll">
+          <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg" class="history-columns-svg">
+            <!-- Columna izquierda -->
+            <rect x="50" y="30" width="8" height="260" fill="#b8962e" opacity="0.08" />
+            <line x1="54" y1="30" x2="54" y2="290" stroke="#b8962e" stroke-width="0.8" opacity="0.15" />
+            <rect x="40" y="20" width="28" height="10" rx="2" fill="#b8962e" opacity="0.15" />
+            <rect x="40" y="290" width="28" height="10" rx="2" fill="#b8962e" opacity="0.15" />
+            <ellipse cx="54" cy="20" rx="16" ry="4" fill="#b8962e" opacity="0.2" />
+            <!-- Letra B -->
+            <text x="54" y="315" text-anchor="middle" fill="#b8962e" font-family="'Cinzel', serif" font-size="18"
+              font-weight="700" opacity="0.4">B</text>
+            <!-- Columna derecha -->
+            <rect x="242" y="30" width="8" height="260" fill="#b8962e" opacity="0.08" />
+            <line x1="246" y1="30" x2="246" y2="290" stroke="#b8962e" stroke-width="0.8" opacity="0.15" />
+            <rect x="232" y="20" width="28" height="10" rx="2" fill="#b8962e" opacity="0.15" />
+            <rect x="232" y="290" width="28" height="10" rx="2" fill="#b8962e" opacity="0.15" />
+            <ellipse cx="246" cy="20" rx="16" ry="4" fill="#b8962e" opacity="0.2" />
+            <!-- Letra J -->
+            <text x="246" y="315" text-anchor="middle" fill="#b8962e" font-family="'Cinzel', serif" font-size="18"
+              font-weight="700" opacity="0.4">J</text>
+            <!-- Arco entre columnas -->
+            <path d="M68,30 Q150,-20 232,30" fill="none" stroke="#b8962e" stroke-width="1" opacity="0.15" />
+            <!-- Escuadra y compas miniatura en el centro -->
+            <image href="img/mason_dorado_brillante.svg" x="110" y="80" width="80" height="80" opacity="0.2" />
+          </svg>
+
+          <div class="history-mission">
+            <h3 class="history-subtitle">Nuestra Mision</h3>
+            <p>
+              Es un gran honor el presentarme ante vosotros por este medio, habiendo sido elegido para dirigir el
+              trabajo
+              de esta Logia durante este ciclo masonico. Con esto, no solo me entusiasma reunir mis esfuerzos junto a
+              los
+              Fundadores y mi logia, sino haceros saber a vosotros que esperamos la oportunidad de trabajo conjunto y
+              cercano.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner con cita -->
+      <div class="history-quote-banner animate-on-scroll">
+        <blockquote class="history-quote">
+          La Masoneria es una institucion esencialmente filosofica, filantropica y progresista,
+          que tiene por base la fraternidad universal.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Separador -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="chess-isometric"></div>
+    <div class="separator-triangle">
+      <img src="img/mason_dorado_brillante.svg" alt="" class="separator-icon">
+    </div>
+    <div class="separator-line separator-line--left"></div>
+    <div class="separator-line separator-line--right"></div>
+  </div>
+
+  <!-- =====================================================
+       SECCION 3: SIGNIFICADO DE ALIOTH
+  ====================================================== -->
+  <section class="section section--alioth" id="alioth">
+    <div class="section-container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <img src="img/mason_dorado_brillante.svg" alt="" class="ornament-icon">
+          <span class="ornament-line"></span>
+        </div>
+        <h2 class="section-title">Alioth</h2>
+        <p class="section-subtitle">&epsilon; Ursae Majoris &mdash; La Estrella que nos guia</p>
+      </div>
+
+      <div class="alioth-content">
+        <div class="alioth-text animate-on-scroll">
+          <h3 class="alioth-subtitle">Origen del Nombre</h3>
           <p>
-            Es un gran honor el presentarme ante vosotros por este medio, habiendo sido elegido para dirigir el trabajo
-            de esta Logia durante este ciclo masónico. Con esto, no sólo me entusiasma reunir mis esfuerzos junto a los
-            Fundadores y mi logia, sino haceros saber a vosotros que esperamos la oportunidad de trabajo conjunto y
-            cercano.
+            <strong>Alioth</strong> (Epsilon Ursae Majoris) es la estrella mas brillante de la constelacion de la
+            Osa Mayor y la trigesimo primera estrella mas brillante del cielo nocturno. Su nombre proviene del
+            arabe <em>alyat al-hamal</em>, que significa "la cola gruesa del carnero".
+          </p>
+        </div>
+
+        <div class="alioth-text animate-on-scroll">
+          <h3 class="alioth-subtitle">Simbolismo</h3>
+          <p>
+            A lo largo de la historia, Alioth ha servido como estrella de referencia para navegantes y exploradores.
+            Su posicion en el "carro" de la Osa Mayor la convierte en una guia celeste hacia la Estrella Polar,
+            simbolizando la busqueda constante de la verdad y la luz que ilumina el camino del iniciado.
+          </p>
+        </div>
+
+        <div class="alioth-text animate-on-scroll">
+          <h3 class="alioth-subtitle">Nuestra Estrella</h3>
+          <p>
+            Asi como Alioth guia a quien busca orientarse en la oscuridad de la noche, nuestra Logia busca ser
+            un faro de conocimiento, fraternidad y virtud. Llevamos su nombre como recordatorio de que la luz
+            siempre esta presente para quien la busca con sinceridad y perseverancia.
           </p>
         </div>
       </div>
 
-      <!-- Imagen decorativa / Banner con piso ajedrezado -->
-      <div class="history-image-banner animate-on-scroll">
-        <div class="chess-floor history-chess" aria-hidden="true"></div>
-        <div class="history-banner-content">
-          <blockquote class="history-quote">
-            La Masonería es una institución esencialmente filosófica, filantrópica y progresista,
-            que tiene por base la fraternidad universal.
-          </blockquote>
-        </div>
+      <!-- Banner con dato astronomico -->
+      <div class="history-quote-banner animate-on-scroll">
+        <blockquote class="history-quote">
+          Alioth brilla a 81 anos luz de la Tierra con una magnitud de 1.77,
+          siendo la estrella mas luminosa de la constelacion que ha guiado a la humanidad desde la antiguedad.
+        </blockquote>
       </div>
-    </div>
-
-    <div class="column-right decorative-column" aria-hidden="true">
-      <svg viewBox="0 0 80 400" xmlns="http://www.w3.org/2000/svg" class="column-svg">
-        <rect x="5" y="10" width="70" height="12" rx="4" fill="#c9a84c" opacity="0.3" />
-        <ellipse cx="40" cy="10" rx="35" ry="8" fill="#c9a84c" opacity="0.4" />
-        <path d="M10,18 Q5,25 12,28 Q18,31 15,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5" />
-        <path d="M70,18 Q75,25 68,28 Q62,31 65,22" stroke="#c9a84c" stroke-width="2" fill="none" opacity="0.5" />
-        <rect x="22" y="28" width="36" height="340" fill="#c9a84c" opacity="0.08" />
-        <line x1="28" y1="28" x2="28" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2" />
-        <line x1="40" y1="28" x2="40" y2="368" stroke="#c9a84c" stroke-width="1.5" opacity="0.15" />
-        <line x1="52" y1="28" x2="52" y2="368" stroke="#c9a84c" stroke-width="1" opacity="0.2" />
-        <rect x="10" y="368" width="60" height="8" rx="2" fill="#c9a84c" opacity="0.3" />
-        <rect x="5" y="376" width="70" height="12" rx="3" fill="#c9a84c" opacity="0.4" />
-      </svg>
     </div>
   </section>
 
-  <!-- Separador ajedrezado -->
-  <div class="chess-separator" aria-hidden="true">
-    <div class="chess-floor chess-separator-floor"></div>
+  <!-- Separador -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="chess-isometric"></div>
+    <div class="separator-triangle">
+      <img src="img/mason_dorado_brillante.svg" alt="" class="separator-icon">
+    </div>
+    <div class="separator-line separator-line--left"></div>
+    <div class="separator-line separator-line--right"></div>
   </div>
 
   <!-- =====================================================
-       SECCIÓN 3: CUADRO LOGIAL
+       SECCION 4: GALERIA DE FOTOS
   ====================================================== -->
-  <section class="section officers" id="cuadro">
+  <section class="section section--gallery" id="galeria">
     <div class="section-container">
       <div class="section-header animate-on-scroll">
         <div class="section-ornament" aria-hidden="true">
           <span class="ornament-line"></span>
-          <img src="img/mason.png" alt="mason" class="ornament-icon" width="40" height="40">
+          <img src="img/mason_dorado_brillante.svg" alt="" class="ornament-icon">
           <span class="ornament-line"></span>
         </div>
-        <h2 class="section-title">Cuadro Logial</h2>
-        <p class="section-subtitle">Oficiales del Taller — 2026</p>
-      </div>
-
-      <!-- Tarjetas de oficiales -->
-      <div class="officers-grid">
-
-        <!-- Venerable Maestro (destacado) -->
-        <div class="officer-card officer-card--featured animate-on-scroll">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">VM</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Venerable Maestro</p>
-          </div>
-        </div>
-
-        <!-- Primer Vigilante -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.1s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">1V</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Primer Vigilante</p>
-          </div>
-        </div>
-
-        <!-- Segundo Vigilante -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.15s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">2V</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Segundo Vigilante</p>
-          </div>
-        </div>
-
-        <!-- Secretario -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.2s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">Sec</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Secretario</p>
-          </div>
-        </div>
-
-        <!-- Tesorero -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.25s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">Tes</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Tesorero</p>
-          </div>
-        </div>
-
-        <!-- Orador -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.3s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">Or</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Orador</p>
-          </div>
-        </div>
-
-        <!-- Maestro de Ceremonias -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.35s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">MC</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Maestro de Ceremonias</p>
-          </div>
-        </div>
-
-        <!-- Hospitalario -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.4s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">Hosp</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Hospitalario</p>
-          </div>
-        </div>
-
-        <!-- Experto -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.45s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">Exp</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Experto</p>
-          </div>
-        </div>
-
-        <!-- Primer Diácono -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.5s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">1D</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Primer Diácono</p>
-          </div>
-        </div>
-
-        <!-- Segundo Diácono -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.55s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">2D</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Segundo Diácono</p>
-          </div>
-        </div>
-
-        <!-- Guarda Templo -->
-        <div class="officer-card animate-on-scroll" style="animation-delay: 0.6s;">
-          <div class="officer-photo-wrapper">
-            <div class="officer-photo-placeholder">
-              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="20" fill="#333" />
-                <ellipse cx="40" cy="75" rx="30" ry="20" fill="#333" />
-              </svg>
-            </div>
-            <div class="officer-badge">GT</div>
-          </div>
-          <div class="officer-info">
-            <h3 class="officer-name">[Nombre del Hermano]</h3>
-            <p class="officer-title">Guarda Templo</p>
-          </div>
-        </div>
-
-      </div><!-- /officers-grid -->
-    </div>
-  </section>
-
-  <!-- Separador ajedrezado -->
-  <div class="chess-separator" aria-hidden="true">
-    <div class="chess-floor chess-separator-floor"></div>
-  </div>
-
-  <!-- =====================================================
-       SECCIÓN 4: GALERÍA DE FOTOS
-  ====================================================== -->
-  <section class="section gallery" id="galeria">
-    <div class="section-container">
-      <div class="section-header animate-on-scroll">
-        <div class="section-ornament" aria-hidden="true">
-          <span class="ornament-line"></span>
-          <img src="img/mason.png" alt="mason" class="ornament-icon" width="40" height="40">
-          <span class="ornament-line"></span>
-        </div>
-        <h2 class="section-title">Galería</h2>
+        <h2 class="section-title">Galeria</h2>
         <p class="section-subtitle">Momentos de fraternidad y trabajo</p>
       </div>
 
-      <!-- Grid de galería -->
+      <!-- Grid masonry -->
       <div class="gallery-grid animate-on-scroll">
-
-        <!-- Foto 1 -->
-        <a href="#lightbox-1" class="gallery-item lightbox-trigger" data-index="0" aria-label="Ver foto 1">
-          <div class="gallery-placeholder">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 1</span>
+        <a href="#" class="gallery-item lightbox-trigger" data-index="0" aria-label="Ver foto 1">
+          <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop" alt="Columnas clasicas" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 2 -->
-        <a href="#lightbox-2" class="gallery-item lightbox-trigger" data-index="1" aria-label="Ver foto 2">
-          <div class="gallery-placeholder gallery-placeholder--tall">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 2</span>
+        <a href="#" class="gallery-item gallery-item--tall lightbox-trigger" data-index="1" aria-label="Ver foto 2">
+          <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=600&h=800&fit=crop" alt="Luz al amanecer" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 3 -->
-        <a href="#lightbox-3" class="gallery-item lightbox-trigger" data-index="2" aria-label="Ver foto 3">
-          <div class="gallery-placeholder">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 3</span>
+        <a href="#" class="gallery-item lightbox-trigger" data-index="2" aria-label="Ver foto 3">
+          <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&h=400&fit=crop" alt="Escritura antigua" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 4 -->
-        <a href="#lightbox-4" class="gallery-item gallery-item--wide lightbox-trigger" data-index="3"
-          aria-label="Ver foto 4">
-          <div class="gallery-placeholder">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 4</span>
+        <a href="#" class="gallery-item gallery-item--wide lightbox-trigger" data-index="3" aria-label="Ver foto 4">
+          <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800&h=400&fit=crop" alt="Cielo estrellado" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 5 -->
-        <a href="#lightbox-5" class="gallery-item lightbox-trigger" data-index="4" aria-label="Ver foto 5">
-          <div class="gallery-placeholder">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 5</span>
+        <a href="#" class="gallery-item lightbox-trigger" data-index="4" aria-label="Ver foto 5">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop" alt="Libros antiguos" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 6 -->
-        <a href="#lightbox-6" class="gallery-item lightbox-trigger" data-index="5" aria-label="Ver foto 6">
-          <div class="gallery-placeholder gallery-placeholder--tall">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 6</span>
+        <a href="#" class="gallery-item gallery-item--tall lightbox-trigger" data-index="5" aria-label="Ver foto 6">
+          <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600&h=800&fit=crop" alt="Arquitectura gotica" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 7 -->
-        <a href="#lightbox-7" class="gallery-item lightbox-trigger" data-index="6" aria-label="Ver foto 7">
-          <div class="gallery-placeholder">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 7</span>
+        <a href="#" class="gallery-item lightbox-trigger" data-index="6" aria-label="Ver foto 7">
+          <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop" alt="Biblioteca antigua" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
 
-        <!-- Foto 8 -->
-        <a href="#lightbox-8" class="gallery-item lightbox-trigger" data-index="7" aria-label="Ver foto 8">
-          <div class="gallery-placeholder">
-            <div class="chess-floor gallery-chess-bg" aria-hidden="true"></div>
-            <span class="gallery-icon">&#128247;</span>
-            <span class="gallery-label">Foto 8</span>
+        <a href="#" class="gallery-item lightbox-trigger" data-index="7" aria-label="Ver foto 8">
+          <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=600&h=400&fit=crop" alt="Compas y herramientas" class="gallery-img" loading="lazy">
+          <div class="gallery-overlay" aria-hidden="true">
+            <img src="img/mason_dorado_brillante.svg" alt="" class="gallery-overlay-icon">
           </div>
         </a>
-
-      </div><!-- /gallery-grid -->
+      </div>
     </div>
 
-    <!-- LIGHTBOX MODAL -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+    <!-- Lightbox modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imagenes">
       <div class="lightbox-overlay" id="lightbox-overlay"></div>
       <div class="lightbox-container">
         <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">&times;</button>
         <button class="lightbox-prev" id="lightbox-prev" aria-label="Imagen anterior">&#8249;</button>
         <div class="lightbox-content">
-          <!-- Placeholder para imagen ampliada -->
-          <div class="lightbox-placeholder" id="lightbox-placeholder">
-            <div class="chess-floor" style="position:absolute;inset:0;opacity:0.3;"></div>
-            <span class="gallery-icon" style="font-size:4rem;">&#128247;</span>
-            <span class="gallery-label" id="lightbox-label" style="font-size:1.2rem;margin-top:1rem;">Foto</span>
-          </div>
+          <img class="lightbox-image" id="lightbox-image" src="" alt="Foto de galeria">
         </div>
         <button class="lightbox-next" id="lightbox-next" aria-label="Imagen siguiente">&#8250;</button>
         <p class="lightbox-counter" id="lightbox-counter">1 / 8</p>
       </div>
     </div>
-
   </section>
 
-  <!-- Separador ajedrezado -->
-  <div class="chess-separator" aria-hidden="true">
-    <div class="chess-floor chess-separator-floor"></div>
+  <!-- Separador -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="chess-isometric"></div>
+    <div class="separator-triangle">
+      <img src="img/mason_dorado_brillante.svg" alt="" class="separator-icon">
+    </div>
+    <div class="separator-line separator-line--left"></div>
+    <div class="separator-line separator-line--right"></div>
   </div>
 
   <!-- =====================================================
-       SECCIÓN 5: CONTACTO
+       SECCION 5: CONTACTO
   ====================================================== -->
-  <section class="section contact" id="contacto">
+  <section class="section section--contact" id="contacto">
     <div class="section-container">
       <div class="section-header animate-on-scroll">
         <div class="section-ornament" aria-hidden="true">
           <span class="ornament-line"></span>
-          <img src="img/mason.png" alt="mason" class="ornament-icon" width="40" height="40">
+          <img src="img/mason_dorado_brillante.svg" alt="" class="ornament-icon">
           <span class="ornament-line"></span>
         </div>
         <h2 class="section-title">Contacto</h2>
-        <p class="section-subtitle">Estamos a tus órdenes, Hermano</p>
+        <p class="section-subtitle">Estamos a tus ordenes, Hermano</p>
       </div>
 
       <div class="contact-grid">
-
-        <!-- Información de contacto -->
+        <!-- Informacion de contacto -->
         <div class="contact-info animate-on-scroll">
-          <h3 class="contact-info-title">Encuéntranos</h3>
+          <h3 class="contact-info-title">Encuentranos</h3>
 
           <div class="contact-detail">
-            <div class="contact-icon">&#127970;</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#b8962e" stroke-width="1.5" stroke-linecap="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
             <div>
-              <strong>Dirección</strong>
-              <p>Oriente de Cuautitlán Izcalli, Estado de México</p>
+              <strong>Direccion</strong>
+              <p>Oriente de Cuautitlan Izcalli, Estado de Mexico</p>
             </div>
           </div>
 
           <div class="contact-detail">
-            <div class="contact-icon">&#128337;</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#b8962e" stroke-width="1.5" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
             <div>
               <strong>Tenidas</strong>
               <p>Viernes 20:00 hrs</p>
@@ -574,30 +453,22 @@
           </div>
 
           <div class="contact-detail">
-            <div class="contact-icon">&#9993;</div>
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#b8962e" stroke-width="1.5" stroke-linecap="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
             <div>
               <strong>Correo</strong>
               <p>aliothlif@gmail.com</p>
             </div>
           </div>
-
-          <!-- Mini mapa placeholder -->
-          <div class="map-placeholder animate-on-scroll">
-            <div class="chess-floor" style="position:absolute;inset:0;opacity:0.2;"></div>
-            <span style="position:relative;z-index:1;color:var(--gold);font-size:2rem;">&#128205;</span>
-            <span style="position:relative;z-index:1;color:var(--text-muted);margin-top:0.5rem;">Mapa — [Ciudad, Estado
-              de México]</span>
-          </div>
         </div>
 
-        <!-- Formulario de contacto -->
-        <div class="contact-form-wrapper animate-on-scroll" style="animation-delay:0.2s;">
-          <!--
-            Para activar el envío, reemplaza "YOUR_FORM_ID" con tu ID de Formspree:
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            O configura tu propio backend.
-          -->
-          <form class="contact-form" id="contact-form" action="#" method="POST" novalidate>
+        <!-- Formulario de contacto (envia a Google Form) -->
+        <div class="contact-form-wrapper animate-on-scroll">
+          <form class="contact-form" id="contact-form" novalidate>
             <div class="form-group">
               <label for="nombre" class="form-label">Nombre completo *</label>
               <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required
@@ -605,33 +476,34 @@
             </div>
 
             <div class="form-group">
-              <label for="correo" class="form-label">Correo electrónico *</label>
+              <label for="correo" class="form-label">Correo electronico *</label>
               <input type="email" id="correo" name="correo" class="form-input" placeholder="tucorreo@ejemplo.com"
                 required autocomplete="email" />
             </div>
 
             <div class="form-group">
-              <label for="asunto" class="form-label">Asunto</label>
-              <input type="text" id="asunto" name="asunto" class="form-input" placeholder="¿En qué podemos ayudarte?" />
+              <label for="telefono" class="form-label">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="Tu numero de telefono"
+                autocomplete="tel" />
             </div>
 
             <div class="form-group">
               <label for="mensaje" class="form-label">Mensaje *</label>
               <textarea id="mensaje" name="mensaje" class="form-input form-textarea"
-                placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+                placeholder="Escribe tu mensaje aqui..." rows="5" required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-gold btn-full">
-              Enviar Mensaje
+            <button type="submit" class="btn-submit" id="btn-submit">
+              <span class="btn-submit-text">Enviar Mensaje</span>
+              <span class="btn-submit-fill"></span>
             </button>
-            <p class="form-notice">* Campos requeridos. Tu información es confidencial.</p>
+            <p class="form-notice">* Campos requeridos. Tu informacion es confidencial.</p>
             <div class="form-success" id="form-success" aria-live="polite">
               ¡Mensaje enviado! Nos pondremos en contacto contigo pronto.
             </div>
           </form>
         </div>
-
-      </div><!-- /contact-grid -->
+      </div>
     </div>
   </section>
 
@@ -639,33 +511,32 @@
        FOOTER
   ====================================================== -->
   <footer class="footer">
-    <!-- Piso ajedrezado de fondo -->
-    <div class="chess-floor footer-chess" aria-hidden="true"></div>
-
     <div class="footer-container">
-
       <!-- Logos -->
       <div class="footer-logos">
-        <div class="logo-placeholder logo-alioth logo-footer" title="Logo Logia Alioth No. 44">
-          <img src="img/logo_alioth.png" alt="Logo Logia Alioth No. 44" class="logo-alioth" width="70" height="70">
-        </div>
+        <img src="img/logo_alioth.png" alt="Logo Logia Alioth No. 44" class="footer-logo-img" width="80" height="80">
         <div class="footer-logos-divider" aria-hidden="true">
-          <!-- Escuadra y compás pequeño -->
-          <img src="img/mason.png" alt="mason" class="ornament-icon" width="40" height="40">
+          <img src="img/mason_dorado_brillante.svg" alt="" class="footer-mini-sc-img">
         </div>
-        <div class="logo-placeholder logo-gran-logia logo-footer" title="Logo Gran Logia del Estado de México">
-          <img src="img/mrgledm.avif" alt="Logo Gran Logia del Estado de México" class="logo-gran-logia" width="70"
-            height="70">
-        </div>
+        <img src="img/mrgledm.avif" alt="Logo Gran Logia del Estado de Mexico" class="footer-logo-img" width="80"
+          height="80">
       </div>
 
-      <!-- Frase masónica -->
-      <p class="footer-motto">"Libertad, Igualdad, Fraternidad"</p>
+      <!-- Pentagrama SVG -->
+      <div class="footer-pentagram" aria-hidden="true">
+        <svg viewBox="0 0 100 100" class="pentagram-svg">
+          <polygon points="50,5 61.8,37.6 97.6,37.6 68.4,58.8 79.6,91.4 50,71.2 20.4,91.4 31.6,58.8 2.4,37.6 38.2,37.6"
+            fill="none" stroke="#b8962e" stroke-width="0.8" opacity="0.5" />
+        </svg>
+      </div>
 
-      <!-- Información -->
+      <!-- Frase masonica -->
+      <p class="footer-motto">Ordo Ab Chao</p>
+
+      <!-- Informacion -->
       <div class="footer-info">
-        <p class="footer-name">R&there4; L&there4;S&there4; Alioth No. 44</p>
-        <p class="footer-org">Muy Respetable Gran Logia del Estado de México</p>
+        <p class="footer-name">R∴ L∴S∴ Alioth No. 44</p>
+        <p class="footer-org">Muy Respetable Gran Logia del Estado de Mexico</p>
         <p class="footer-year">Fundada en 2018</p>
       </div>
 
@@ -673,30 +544,8 @@
       <p class="footer-rights">
         &copy; <span id="current-year"></span> Logia Alioth No. 44. Todos los derechos reservados.
       </p>
-
     </div>
   </footer>
-
-  <!-- =====================================================
-       SVG DEFS (reutilizables)
-  ====================================================== -->
-  <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <!-- Escuadra y Compás pequeño para ornamentos -->
-      <symbol id="sq-compass-small" viewBox="0 0 40 40">
-        <!-- Escuadra -->
-        <line x1="8" y1="12" x2="20" y2="32" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" />
-        <line x1="20" y1="32" x2="32" y2="12" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" />
-        <!-- Compás -->
-        <line x1="20" y1="8" x2="11" y2="28" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" />
-        <line x1="20" y1="8" x2="29" y2="28" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" />
-        <circle cx="20" cy="8" r="2" fill="#c9a84c" />
-        <line x1="14" y1="20" x2="26" y2="20" stroke="#c9a84c" stroke-width="1.5" />
-        <text x="20" y="24" text-anchor="middle" fill="#c9a84c" font-size="7" font-family="Cinzel,serif"
-          font-weight="700">G</text>
-      </symbol>
-    </defs>
-  </svg>
 
   <script src="js/main.js"></script>
 </body>
