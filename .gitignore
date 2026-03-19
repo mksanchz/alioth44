@@ -1,0 +1,13 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Node (por si se agrega en el futuro)
+node_modules/
