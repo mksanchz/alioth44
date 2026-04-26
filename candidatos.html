@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Formulario de Candidatos | R∴L∴S∴ Alioth No. 44</title>
+  <meta name="description"
+    content="Formulario de candidatura para acercarse a la Respetable Logia Simbolica Alioth No. 44." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#050505" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo_alioth.png" />
+  <link rel="apple-touch-icon" href="img/logo_alioth.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── PAGINA CANDIDATOS — Estilos especificos ─────────────── */
+    .candidatos-intro {
+      max-width: 720px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      color: var(--text-main);
+      font-family: "Cormorant Garamond", "Georgia", serif;
+      font-size: 1.15rem;
+      line-height: 1.85;
+    }
+
+    .candidatos-intro p {
+      margin-bottom: 1.2rem;
+    }
+
+    .candidatos-intro strong {
+      color: var(--ivory);
+      font-weight: 600;
+    }
+
+    .candidatos-quote {
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      padding: 1.2rem 1.6rem;
+      border-left: 2px solid rgba(184, 150, 46, 0.4);
+      border-right: 2px solid rgba(184, 150, 46, 0.4);
+      margin: 2rem auto 0;
+      max-width: 580px;
+    }
+
+    /* Marco decorativo del formulario */
+    .candidatos-form-frame {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      padding: 3rem 2.5rem;
+      background: linear-gradient(180deg, rgba(184, 150, 46, 0.04) 0%, rgba(184, 150, 46, 0.01) 100%);
+      border: 1px solid rgba(184, 150, 46, 0.18);
+      box-shadow:
+        0 0 60px rgba(184, 150, 46, 0.06),
+        inset 0 0 80px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Esquinas doradas decorativas */
+    .candidatos-corner {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--gold);
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .candidatos-corner--tl {
+      top: -1px;
+      left: -1px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .candidatos-corner--tr {
+      top: -1px;
+      right: -1px;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    .candidatos-corner--bl {
+      bottom: -1px;
+      left: -1px;
+      border-right: none;
+      border-top: none;
+    }
+
+    .candidatos-corner--br {
+      bottom: -1px;
+      right: -1px;
+      border-left: none;
+      border-top: none;
+    }
+
+    /* Encabezado de seccion dentro del marco */
+    .form-section-header {
+      text-align: center;
+      margin-bottom: 2.2rem;
+      padding-bottom: 1.6rem;
+      border-bottom: 1px solid rgba(184, 150, 46, 0.12);
+    }
+
+    .form-section-header h2 {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.4rem;
+    }
+
+    .form-section-header p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin: 0;
+    }
+
+    /* Grid responsive para campos cortos */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    /* Asterisco dorado en labels obligatorios */
+    .form-label .req {
+      color: var(--gold);
+      margin-left: 0.25rem;
+    }
+
+    /* Radio buttons estilo masonico */
+    .form-radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+
+    .form-radio-option {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.7rem 1rem;
+      background: var(--black-soft);
+      border: 1px solid rgba(184, 150, 46, 0.1);
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+      font-family: "Cormorant Garamond", "Georgia", serif;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .form-radio-option:hover {
+      border-color: rgba(184, 150, 46, 0.4);
+      background: rgba(184, 150, 46, 0.04);
+    }
+
+    .form-radio-option input[type="radio"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 1px solid var(--gold-dark);
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+      transform: rotate(45deg);
+      transition: border-color var(--transition);
+    }
+
+    .form-radio-option input[type="radio"]:checked {
+      border-color: var(--gold);
+      background: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184, 150, 46, 0.15);
+    }
+
+    .form-radio-option input[type="radio"]:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 2px;
+    }
+
+    .form-radio-option:has(input:checked) {
+      border-color: var(--gold);
+      background: rgba(184, 150, 46, 0.06);
+    }
+
+    /* Numero de campo decorativo */
+    .form-group {
+      position: relative;
+    }
+
+    .form-field-num {
+      display: inline-block;
+      font-family: var(--font-title);
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-right: 0.6rem;
+      opacity: 0.7;
+    }
+
+    /* Aviso final */
+    .candidatos-notice {
+      max-width: 720px;
+      margin: 2.5rem auto 0;
+      padding: 1.4rem 1.8rem;
+      background: rgba(184, 150, 46, 0.04);
+      border-left: 2px solid var(--gold-dark);
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      text-align: left;
+    }
+
+    .candidatos-notice strong {
+      color: var(--ivory);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-family: var(--font-title);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .candidatos-notice a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184, 150, 46, 0.3);
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .candidatos-notice a:hover {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold-light);
+    }
+
+    /* Pantalla de confirmacion (post-envio) */
+    .candidatos-success {
+      display: none;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(184, 150, 46, 0.05) 0%, rgba(184, 150, 46, 0.01) 100%);
+      border: 1px solid rgba(184, 150, 46, 0.3);
+      position: relative;
+    }
+
+    .candidatos-success.visible {
+      display: block;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .candidatos-success-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      opacity: 0.85;
+    }
+
+    .candidatos-success h3 {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+
+    .candidatos-success p {
+      color: var(--text-main);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto 1rem;
+      font-family: "Cormorant Garamond", "Georgia", serif;
+    }
+
+    @media (max-width: 640px) {
+      .candidatos-intro {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .candidatos-form-frame {
+        padding: 2rem 1.2rem;
+      }
+
+      .candidatos-notice {
+        font-size: 0.85rem;
+        padding: 1.1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar simplificado -->
+  <header class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo_alioth.png" alt="Logo Logia Alioth No. 44" class="nav-logo-img" width="60" height="60">
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Navegacion">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="index.html#historia" class="nav-link">Historia</a>
+        <a href="index.html#alioth" class="nav-link">Alioth</a>
+        <a href="index.html#galeria" class="nav-link">Galeria</a>
+        <a href="index.html#contacto" class="nav-link">Contacto</a>
+      </nav>
+      <div class="nav-logo-right">
+        <img src="img/mrgledm.avif" alt="Muy Respetable Gran Logia del Estado de Mexico" class="nav-logo-img" width="60"
+          height="60">
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="legal-page">
+    <div class="legal-container" style="max-width: 880px;">
+
+      <!-- Encabezado -->
+      <div class="legal-header">
+        <div class="section-ornament" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <img src="img/mason_dorado_brillante.svg" alt="" class="ornament-icon">
+          <span class="ornament-line"></span>
+        </div>
+        <h1 class="legal-title">Formulario de Candidatos</h1>
+        <p class="legal-date">R∴ L∴ S∴ Alioth No. 44</p>
+      </div>
+
+      <!-- Introduccion -->
+      <div class="candidatos-intro">
+        <p>
+          Si deseas presentar tu candidatura para acercarte a la Orden, te invitamos a
+          completar el siguiente formulario. La informacion sera tratada con
+          <strong>estricta confidencialidad</strong>.
+        </p>
+        <blockquote class="candidatos-quote">
+          &ldquo;A quien busca con sinceridad la luz, la luz le sera mostrada.&rdquo;
+        </blockquote>
+      </div>
+
+      <!-- Formulario nativo (envia a Google Forms via iframe oculto) -->
+      <div class="candidatos-form-frame" id="form-frame">
+        <span class="candidatos-corner candidatos-corner--tl" aria-hidden="true"></span>
+        <span class="candidatos-corner candidatos-corner--tr" aria-hidden="true"></span>
+        <span class="candidatos-corner candidatos-corner--bl" aria-hidden="true"></span>
+        <span class="candidatos-corner candidatos-corner--br" aria-hidden="true"></span>
+
+        <div class="form-section-header">
+          <h2>Datos del Candidato</h2>
+          <p>Por favor completa todos los campos requeridos</p>
+        </div>
+
+        <form
+          class="contact-form"
+          id="candidate-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSchPBT2zRP2MUukUkMA5PN2bBx3DWcRT-ulPzDpvCZjnX_cpA/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          novalidate>
+
+          <!-- 1. Nombre completo -->
+          <div class="form-group">
+            <label for="f-nombre" class="form-label">
+              <span class="form-field-num">01</span>Nombre Completo del Candidato<span class="req">*</span>
+            </label>
+            <input type="text" id="f-nombre" name="entry.547680428" class="form-input"
+              placeholder="Nombre y apellidos" required autocomplete="name" />
+          </div>
+
+          <div class="form-row">
+            <!-- 2. Edad -->
+            <div class="form-group">
+              <label for="f-edad" class="form-label">
+                <span class="form-field-num">02</span>Edad<span class="req">*</span>
+              </label>
+              <input type="number" id="f-edad" name="entry.1613516837" class="form-input"
+                placeholder="Anos" min="18" max="120" required />
+            </div>
+
+            <!-- 5. WhatsApp -->
+            <div class="form-group">
+              <label for="f-whatsapp" class="form-label">
+                <span class="form-field-num">03</span>Numero de WhatsApp<span class="req">*</span>
+              </label>
+              <input type="tel" id="f-whatsapp" name="entry.725160748" class="form-input"
+                placeholder="Ej. 55 1234 5678" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <!-- 3. Estado civil -->
+          <div class="form-group">
+            <label class="form-label">
+              <span class="form-field-num">04</span>Estado Civil<span class="req">*</span>
+            </label>
+            <div class="form-radio-group" role="radiogroup" aria-label="Estado Civil">
+              <label class="form-radio-option">
+                <input type="radio" name="entry.698290578" value="Soltero/a" required />
+                <span>Soltero/a</span>
+              </label>
+              <label class="form-radio-option">
+                <input type="radio" name="entry.698290578" value="Casado/a" />
+                <span>Casado/a</span>
+              </label>
+              <label class="form-radio-option">
+                <input type="radio" name="entry.698290578" value="Divorciado/a" />
+                <span>Divorciado/a</span>
+              </label>
+              <label class="form-radio-option">
+                <input type="radio" name="entry.698290578" value="Viudo/a" />
+                <span>Viudo/a</span>
+              </label>
+              <label class="form-radio-option">
+                <input type="radio" name="entry.698290578" value="Unión Libre/Concubinato" />
+                <span>Union Libre / Concubinato</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <!-- 4. Telefono fijo (opcional) -->
+            <div class="form-group">
+              <label for="f-fijo" class="form-label">
+                <span class="form-field-num">05</span>Telefono Fijo (Opcional)
+              </label>
+              <input type="tel" id="f-fijo" name="entry.1218308242" class="form-input"
+                placeholder="Numero fijo" autocomplete="tel" />
+            </div>
+
+            <!-- 6. Correo -->
+            <div class="form-group">
+              <label for="f-correo" class="form-label">
+                <span class="form-field-num">06</span>Correo Electronico<span class="req">*</span>
+              </label>
+              <input type="email" id="f-correo" name="entry.2077402053" class="form-input"
+                placeholder="tucorreo@ejemplo.com" required autocomplete="email" />
+            </div>
+          </div>
+
+          <!-- 7. Zona de residencia -->
+          <div class="form-group">
+            <label for="f-residencia" class="form-label">
+              <span class="form-field-num">07</span>Zona de Residencia Actual<span class="req">*</span>
+            </label>
+            <input type="text" id="f-residencia" name="entry.1256102596" class="form-input"
+              placeholder="Colonia, ciudad, estado" required />
+          </div>
+
+          <!-- 8. Zona de trabajo -->
+          <div class="form-group">
+            <label for="f-trabajo" class="form-label">
+              <span class="form-field-num">08</span>Zona o Area de Trabajo Principal<span class="req">*</span>
+            </label>
+            <input type="text" id="f-trabajo" name="entry.1019282654" class="form-input"
+              placeholder="Zona donde laboras habitualmente" required />
+          </div>
+
+          <!-- 9. Motivo -->
+          <div class="form-group">
+            <label for="f-motivo" class="form-label">
+              <span class="form-field-num">09</span>&iquest;Por que desea unirse a la Masoneria?<span class="req">*</span>
+            </label>
+            <textarea id="f-motivo" name="entry.90037629" class="form-input form-textarea"
+              placeholder="Motiva tu solicitud y tus expectativas..." rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btn-submit">
+            <span class="btn-submit-text">Enviar Candidatura</span>
+            <span class="btn-submit-fill"></span>
+          </button>
+          <p class="form-notice">* Campos requeridos. Tus datos son confidenciales.</p>
+        </form>
+      </div>
+
+      <!-- Pantalla de exito -->
+      <div class="candidatos-success" id="success-screen" role="status" aria-live="polite">
+        <img src="img/mason_dorado_brillante.svg" alt="" class="candidatos-success-icon">
+        <h3>Candidatura Recibida</h3>
+        <p>
+          Hemos recibido tu solicitud con exito. Un miembro de la Logia se pondra en
+          contacto contigo en los proximos dias para continuar con el proceso.
+        </p>
+        <p style="color: var(--gold-light); font-style: italic; font-size: 0.95rem;">
+          &ldquo;La paciencia es la virtud del fuerte.&rdquo;
+        </p>
+      </div>
+
+      <!-- Aviso confidencialidad -->
+      <aside class="candidatos-notice" id="privacy-notice">
+        <strong>Aviso de Confidencialidad</strong>
+        Los datos recabados en este formulario son tratados conforme a nuestro
+        <a href="privacidad.html">Aviso de Privacidad</a> y al
+        <a href="legal.html">Aviso Legal</a>. La Logia no comparte tu informacion con
+        terceros y la conserva unicamente para los fines del proceso de acercamiento
+        a la Orden.
+      </aside>
+
+      <!-- Volver -->
+      <div class="legal-back">
+        <a href="index.html" class="btn-cta" style="opacity:1; animation:none;">
+          <span class="btn-cta-text">Volver al Inicio</span>
+          <span class="btn-cta-border btn-cta-border--top" style="width:100%; animation:none;"></span>
+          <span class="btn-cta-border btn-cta-border--right" style="height:100%; animation:none;"></span>
+          <span class="btn-cta-border btn-cta-border--bottom" style="width:100%; animation:none;"></span>
+          <span class="btn-cta-border btn-cta-border--left" style="height:100%; animation:none;"></span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Iframe oculto que captura la respuesta de Google Forms (cross-origin) -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" tabindex="-1"
+      aria-hidden="true"></iframe>
+  </main>
+
+  <!-- Footer simplificado -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-motto">Ordo Ab Chao</p>
+      <div class="footer-info">
+        <p class="footer-name">R∴ L∴S∴ Alioth No. 44</p>
+        <p class="footer-org">Muy Respetable Gran Logia del Estado de Mexico</p>
+      </div>
+      <nav class="footer-legal" aria-label="Enlaces legales">
+        <a href="privacidad.html" class="footer-legal-link">Aviso de Privacidad</a>
+        <span class="footer-legal-sep" aria-hidden="true">&middot;</span>
+        <a href="legal.html" class="footer-legal-link">Aviso Legal</a>
+      </nav>
+      <p class="footer-rights">
+        &copy; <span id="current-year"></span> Logia Alioth No. 44. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Anio dinamico
+    var y = document.getElementById('current-year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Hamburger mobile
+    var h = document.getElementById('hamburger');
+    var n = document.getElementById('nav-links');
+    if (h) h.addEventListener('click', function () {
+      var open = n.classList.toggle('open');
+      h.classList.toggle('active');
+      h.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    n.querySelectorAll('.nav-link').forEach(function (l) {
+      l.addEventListener('click', function () {
+        n.classList.remove('open'); h.classList.remove('active');
+        h.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+      });
+    });
+
+    // Submit handler — el form envia al iframe oculto, escuchamos el load
+    (function () {
+      var form = document.getElementById('candidate-form');
+      var iframe = document.getElementById('hidden_iframe');
+      var formFrame = document.getElementById('form-frame');
+      var successScreen = document.getElementById('success-screen');
+      var privacyNotice = document.getElementById('privacy-notice');
+      var btn = document.getElementById('btn-submit');
+      var submitted = false;
+
+      form.addEventListener('submit', function () {
+        if (!form.checkValidity()) return;
+        submitted = true;
+        btn.disabled = true;
+        btn.querySelector('.btn-submit-text').textContent = 'Enviando...';
+      });
+
+      iframe.addEventListener('load', function () {
+        if (!submitted) return;
+        formFrame.style.display = 'none';
+        privacyNotice.style.display = 'none';
+        successScreen.classList.add('visible');
+        window.scrollTo({ top: successScreen.offsetTop - 120, behavior: 'smooth' });
+      });
+    })();
+  </script>
+</body>
+
+</html>
